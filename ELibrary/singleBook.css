@@ -1,0 +1,354 @@
+@import url('https://github.com/primer/primitives/blob/main/fonts/mona-sans.css');
+@import url('https://cdn-uicons.flaticon.com/2.6.0/uicons-thin-rounded/css/uicons-thin-rounded.css');
+@font-face {
+    font-family: "I Am Online With U";
+    src: url("i-am-online-with-u-font/IAmOnlineWithU-o96q.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Heo";
+    src: url("bemirs-font/BemirsDemoVersionRegular-L360Z.ttf")format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+:root{
+    --pink: rgb(191, 78, 135);
+    --red:#DF3002 ;
+    --blue:#004EAC;
+    --pink2:#FFA0D1;
+    --FONTCursr:  'Courier New', Courier, monospace;
+    --dreamfont:'Dream Avenue',san-serif;
+    --gray: #282828;
+    --gray2: #888888;
+    --white:#FDFAF8;
+    --beige:#F1EEE3;
+
+}
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+body{
+    
+    color: rgb(214, 209, 209);
+}
+.flexRow{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.flexColumn{
+    display: flex;
+    flex-direction: column;
+}
+.BookContent{
+    width: 80%;
+    height: 700px;
+    align-self: center;
+    justify-content: center;
+    margin-top: 3%;
+    
+    font-family: var(--dreamfont);
+   
+
+}
+.BookData{
+    align-self: center;
+    width: 50%;
+   height: 50%;
+    justify-content: space-evenly;
+    align-items: center;
+    
+
+}
+.TextTitle{
+    font-size: 59px;
+}
+.ReadButton{
+    width: 100px;
+    height: auto;
+    border-radius: 15px;
+    padding: 5px;
+    background-color:black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10%;
+    font-size: 15px;
+    color: var(--gray2);
+    font-weight: 900;
+}
+.Options{
+    width: 200px;
+    height: auto;
+    display: flex;
+    justify-content:center ;
+    align-items: center;
+    gap: 3%;
+    
+}
+.option{
+    display: flex;
+    width: 30px;
+    height: auto;
+    border-radius: 50%;
+    background-color:#F6F5F1;
+    justify-content: center;
+    align-items: center;
+}
+.option i{
+    font-size: 90%;
+    color: black;
+    padding: 10%;
+ }
+.BookOptions{
+    width: 100%;
+   
+}
+.Second{
+   width: 100%;
+   height: fit-content;
+
+}
+.first{
+    width: 100%;
+    height: fit-content;
+   
+}
+.Description{
+    margin: 3%;
+    width: 90%;
+}
+.Description h2{
+    font-size: 45px;
+    margin: 3%;
+    color: var(--gray2);
+    opacity: 0.4;
+}
+.Description p {
+  
+    width: 100%;
+text-align: center;
+
+word-spacing: 1rem;
+
+}
+
+.Comment {
+    display: flex;
+    flex-direction: column;
+   
+   
+    padding: 15px;
+    margin: 10px 0;
+   border-bottom:0.1px solid var(--gray2) ;
+    width: 50%;
+    max-width: 600px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+
+  }
+  
+  .CommentImage {
+    align-self: flex-start;
+    margin-bottom: 10px;
+  }
+  
+  .CommentImage img {
+    width: 40px;
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .CommentAccountName {
+    font-weight: bold;
+    color: #4e4e4e;
+    font-size: 13px;
+    margin-bottom: 5px;
+  }
+  
+  .CommentContent {
+    font-size: 10px;
+    color: #555;
+    line-height: 1.5;
+    word-wrap: break-word;
+  }
+  .Row{
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    
+  }
+  .Group1 {
+   
+    width: 50%;
+    height: fit-content;
+  }
+  .Group2{
+   
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .Grouped{
+    width: 100px;
+    height: fit-content;
+   
+    margin: 2em;
+  }
+  .Grouped h3{
+    font-size: 20px;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    font-weight: 900;
+    color: var(--gray2);
+  }
+  .first{
+   position: relative;
+   
+   top: 170px !important;
+   z-index: 1000;
+  }
+  .Second{
+    padding-top: 10%;
+    background-color:var(--white) ;
+   
+    z-index: 1;
+    color: black;
+    border-top-left-radius:12px ;
+    border:2px solid  var(--gray2);
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+  }
+  .buttons {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically if needed */
+   width: 10%;
+}
+
+.buttonUp,
+.buttondown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px; /* Adjust size */
+    height: 80px; /* Adjust size */
+    border-radius: 50%; /* Circular buttons */
+    
+    margin: 10px; /* Space between buttons */
+}
+
+.buttonUp i,
+.buttondown i {
+    font-size: 40px; /* Bigger icons */
+    color: rgb(255, 255, 255); /* Change color if needed */
+}
+.Comments span h3{
+    font-size: 20px;
+  
+  
+    font-weight: 900;
+    color: var(--gray2);
+    opacity: 0.5;
+}
+.Comments span{
+    margin-top: 1em;
+    margin-left: 2em;
+   
+    display: flex;
+    gap: 0.1em;
+    
+}
+.rating {
+    display: flex;
+    gap: 5px; /* Space between stars */
+    justify-content: center; /* Center the stars */
+    font-size: 30px; /* Bigger stars */
+    color: rgb(166, 166, 166); /* Gold color for rating */
+}
+.rating i:nth-child(1){
+    color: goldenrod;
+}
+.Comment .Row{
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex;
+    flex-direction: row;
+    gap: 2px;
+   
+}
+.Row .CommentAccountName,.Row .CommentImage{
+    margin: 0;
+}
+.wa{
+    margin: 1em;
+    font-size: 30px;
+  
+  
+    font-weight: 900;
+    color: var(--gray2);
+   
+}
+.wa h3{
+    opacity: 0.5;
+    margin-right:5px ;
+}
+
+.search-container {
+    margin-top: 5%;
+    color: rgb(1, 0, 0);
+    display: flex;
+    align-items: center;
+    
+    padding: 5px;
+    width: fit-content;
+    top: 40px;
+    right: 60px;
+ 
+    border: none;
+    background-color: whitesmoke;
+    border-radius:23px ;
+}
+
+.search-input {
+    border: none;
+    outline: none;
+    background: none;
+    padding: 8px 10px;
+    flex: 1;
+    font-size: 16px;
+    color: rgb(8, 5, 5);
+}
+
+.search-button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 8px;
+    color: #333;
+}
+
+.search-button i {
+    color: #555;
+}
+
+/* Hover Effect */
+.search-button:hover i {
+    color: #000;
+}
+

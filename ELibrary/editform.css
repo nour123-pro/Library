@@ -1,0 +1,498 @@
+@font-face {
+    font-family: 'Brown Sugar';
+    src: url('Brown-Sugar/BrownSugar.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --graycolor: #888888;  /* Example gray color */
+    --maincolor: #000000;  /* Example main color */
+}
+
+
+
+  
+
+.EditProfileForm{
+    width: 500px;
+    height: fit-content;
+   
+    border-radius: 10px;
+   border:1px solid gray ;
+   padding: 2rem;
+   background-color: rgb(255, 255, 255);
+}
+.flex-colomn{
+    display: flex;
+    flex-direction: column;
+}
+.flex-row{
+    display: flex;
+    flex-direction: row;
+}
+.AlignCenter{
+    justify-content: center;
+    align-items: center;
+}
+.SpaceBetween{
+    justify-content: space-between;
+}
+.ImageSection{
+   width: 100%;
+   height: fit-content;
+   gap: 2rem;
+   
+   font-size: 10px;
+   
+}
+.ImageSection p{
+    cursor: pointer;
+}
+.ImageSection .Image{
+    gap: 1rem;
+    font-size: 12px;
+}
+.Image p:nth-child(1){
+    color: green;
+}
+.Image p:nth-child(2){
+    color: red;
+}
+.ImageHolder{
+    width: 100px;  /* Adjust size as needed */
+    height: 80px;
+    border-radius: 50%; /* Perfect circle */
+    overflow: hidden; /* Ensures image does not overflow */
+    border: 2px solid #ddd; /* Optional border */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0;
+}
+.ImageHolder img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.ExtraInfo{
+    color: var(--graycolor);
+}
+.EditProfileForm h5{
+    color: var(--graycolor);
+    font-size: 9px;
+}
+textarea{
+    height: 23px;
+    background-color: red;
+}
+.UserName,.UserDescription{
+    margin-top:2rem ;
+
+}
+
+
+.container_chat_bot {
+    display: flex;
+    flex-direction: column;
+    max-width: 260px;
+    width: 100%;
+  }
+  
+  .container_chat_bot .container-chat-options {
+    position: relative;
+    display: flex;
+    background: linear-gradient(
+      to bottom right,
+      #7e7e7e,
+      #363636,
+      #363636,
+      #363636,
+      #363636
+    );
+    border-radius: 16px;
+    padding: 1.5px;
+    overflow: hidden;
+  
+    &::after {
+      position: absolute;
+      content: "";
+      top: -10px;
+      left: -10px;
+      background: radial-gradient(
+        ellipse at center,
+        #ffffff,
+        rgba(255, 255, 255, 0.3),
+        rgba(255, 255, 255, 0.1),
+        rgba(0, 0, 0, 0),
+        rgba(0, 0, 0, 0),
+        rgba(0, 0, 0, 0),
+        rgba(0, 0, 0, 0)
+      );
+      width: 30px;
+      height: 30px;
+      filter: blur(1px);
+    }
+  }
+  
+  .container_chat_bot .container-chat-options .chat {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .container_chat_bot .container-chat-options .chat .chat-bot {
+    position: relative;
+    display: flex;
+  }
+  
+  .container_chat_bot .chat .chat-bot textarea {
+    background-color: transparent;
+    border-radius: 16px;
+    border: none;
+    width: 100%;
+    height: 50px;
+    color: #ffffff;
+    font-family: sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    padding: 10px;
+    resize: none;
+    outline: none;
+  
+    &::-webkit-scrollbar {
+      width: 10px;
+      height: 10px;
+    }
+  
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+  
+    &::-webkit-scrollbar-thumb {
+      background: #888;
+      border-radius: 5px;
+    }
+  
+    &::-webkit-scrollbar-thumb:hover {
+      background: #555;
+      cursor: pointer;
+    }
+  
+    &::placeholder {
+      color: #f3f6fd;
+      transition: all 0.3s ease;
+    }
+    &:focus::placeholder {
+      color: #363636;
+    }
+  }
+  
+  .container_chat_bot .chat .options {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 10px;
+  }
+  
+  .container_chat_bot .chat .options .btns-add {
+    display: flex;
+    gap: 8px;
+  
+    & button {
+      display: flex;
+      color: rgba(255, 255, 255, 0.1);
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+  
+      &:hover {
+        transform: translateY(-5px);
+        color: #ffffff;
+      }
+    }
+  }
+  
+  .container_chat_bot .chat .options .btn-submit {
+    display: flex;
+    padding: 2px;
+    background-image: linear-gradient(to top, #292929, #555555, #292929);
+    border-radius: 10px;
+    box-shadow: inset 0 6px 2px -4px rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: all 0.15s ease;
+  
+    & i {
+      width: 30px;
+      height: 30px;
+      padding: 6px;
+      background: rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      backdrop-filter: blur(3px);
+      color: #8b8b8b;
+    }
+    & svg {
+      transition: all 0.3s ease;
+    }
+    &:hover svg {
+      color: #f3f6fd;
+      filter: drop-shadow(0 0 5px #ffffff);
+    }
+  
+    &:focus svg {
+      color: #f3f6fd;
+      filter: drop-shadow(0 0 5px #ffffff);
+      transform: scale(1.2) rotate(45deg) translateX(-2px) translateY(1px);
+    }
+  
+    &:active {
+      transform: scale(0.92);
+    }
+  }
+  
+  .container_chat_bot .tags {
+    padding: 14px 0;
+    display: flex;
+    color: #ffffff;
+    font-size: 10px;
+    gap: 4px;
+  
+    & span {
+      padding: 4px 8px;
+      background-color: #1b1b1b;
+      border: 1.5px solid #363636;
+      border-radius: 10px;
+      cursor: pointer;
+      user-select: none;
+    }
+  }
+  
+/* Save Button container */
+.save-button {
+font-family: inherit;
+font-size: 10px;
+background: #fd9a9a;
+color: white;
+fill: rgb(155, 153, 153);
+padding: 0.7em 1em;
+padding-left: 0.9em;
+display: flex;
+align-items: center;
+cursor: pointer;
+border: none;
+border-radius: 15px;
+font-weight: 1000;
+width: fit-content;
+height: fit-content;
+
+}
+
+/* Span inside Save button */
+.save-button span {
+display: block;
+margin-left: 0.3em;
+transition: all 0.3s ease-in-out;
+}
+
+/* SVG inside Save button */
+.save-button svg {
+display: block;
+transform-origin: center center;
+transition: transform 0.3s ease-in-out;
+}
+
+/* Hover effects for Save button */
+.save-button:hover {
+background: #000;
+}
+
+.save-button:hover .svg-wrapper {
+transform: scale(1.25);
+transition: 0.5s linear;
+}
+
+.save-button:hover svg {
+transform: translateX(1.2em) scale(1.1);
+fill: #fff;
+}
+
+.save-button:hover span {
+opacity: 0;
+transition: 0.5s linear;
+}
+
+/* Active state for Save button */
+.save-button:active {
+transform: scale(0.95);
+}
+.cancel-button{
+background-color: gray;
+}
+.EditProfileForm h2{
+  font-weight: 900;
+  margin: 1vh;
+  font-size: 30px;
+  color: var(--graycolor);
+  font-family: 'Brown Sugar',sans-serif;
+}
+
+
+
+.EditProfileForm{
+    width: 500px;
+    height: fit-content;
+   
+  
+   padding: 2rem;
+   background-color: white;
+   
+}
+.flex-colomn{
+    display: flex;
+    flex-direction: column;
+}
+.flex-row{
+    display: flex;
+    flex-direction: row;
+}
+.AlignCenter{
+    justify-content: center;
+    align-items: center;
+}
+.SpaceBetween{
+    justify-content: space-between;
+}
+.ImageSection{
+   width: 100%;
+   height: fit-content;
+   gap: 2rem;
+   
+   font-size: 10px;
+   
+}
+.ImageSection p{
+    cursor: pointer;
+}
+.ImageSection .Image{
+    gap: 1rem;
+    font-size: 12px;
+}
+.Image p:nth-child(1){
+    color: green;
+}
+.Image p:nth-child(2){
+    color: red;
+}
+.ImageHolder{
+    width: 100px;  /* Adjust size as needed */
+    height: 80px;
+    border-radius: 50%; /* Perfect circle */
+    overflow: hidden; /* Ensures image does not overflow */
+    border: 2px solid #ddd; /* Optional border */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0;
+}
+.ImageHolder img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.ExtraInfo{
+    color: var(--graycolor);
+}
+.EditProfileForm  h5{
+color: var(--graycolor) !important;
+font-size: 9px !important;
+}
+
+.UserName,.UserDescription{
+    margin-top:2rem ;
+
+}
+
+
+
+/* Save Button container */
+.save-button {
+font-family: inherit;
+font-size: 10px;
+background: #fd9a9a;
+color: white;
+fill: rgb(155, 153, 153);
+padding: 0.7em 1em;
+padding-left: 0.9em;
+display: flex;
+align-items: center;
+cursor: pointer;
+border: none;
+border-radius: 15px;
+font-weight: 1000;
+width: fit-content;
+height: fit-content;
+
+}
+
+/* Span inside Save button */
+.save-button span {
+display: block;
+margin-left: 0.3em;
+transition: all 0.3s ease-in-out;
+}
+
+/* SVG inside Save button */
+.save-button svg {
+display: block;
+transform-origin: center center;
+transition: transform 0.3s ease-in-out;
+}
+
+/* Hover effects for Save button */
+.save-button:hover {
+background: #000;
+}
+
+.save-button:hover .svg-wrapper {
+transform: scale(1.25);
+transition: 0.5s linear;
+}
+
+.save-button:hover svg {
+transform: translateX(1.2em) scale(1.1);
+fill: #fff;
+}
+
+.save-button:hover span {
+opacity: 0;
+transition: 0.5s linear;
+}
+
+/* Active state for Save button */
+.save-button:active {
+transform: scale(0.95);
+}
+.cancel-button{
+background-color: gray;
+}
+.EditProfileForm h2{
+  font-weight: 900;
+  margin: 1vh;
+  font-size: 30px;
+  color: var(--graycolor);
+  font-family: 'Brown Sugar',sans-serif;
+}
+textarea {
+all: unset; /* Unsets all styles */
+
+padding: 10px !important; /* Add padding to ensure text is not cut off */
+height: 150px; /* Adjust height if needed */
+width: 100%; /* Make it full width */
+resize: none; /* Optional, to prevent resizing */
+}

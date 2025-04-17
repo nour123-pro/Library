@@ -1,0 +1,1073 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Chat Application
+  </title>
+   <link rel="stylesheet" >
+   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.0/dist/tailwind.min.css" rel="stylesheet">
+   <!-- Add Font Awesome CDN link in your HTML head -->
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+   <script src="https://cdn.tailwindcss.com"></script>
+   <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-straight/css/uicons-regular-straight.css'>
+   <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+   <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-thin-straight/css/uicons-thin-straight.css'>
+   <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-straight/css/uicons-solid-straight.css'>
+   <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-thin-rounded/css/uicons-thin-rounded.css'>
+  
+ 
+ 
+   <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-straight/css/uicons-regular-straight.css'>
+   <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+   <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-thin-straight/css/uicons-thin-straight.css'>
+   <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-straight/css/uicons-solid-straight.css'>
+   <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-thin-rounded/css/uicons-thin-rounded.css'>
+ 
+
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="editform.css">
+
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0">
+
+  <script src="https://rawgit.com/kimmobrunfeldt/progressbar.js/1.0.0/dist/progressbar.js"></script>
+    
+
+
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+
+
+
+
+  <style>
+    .sidebar {
+ 
+        width: 270px;
+       margin: 0;
+       height: fit-content;
+        border-radius: 16px;
+        height: fit-content;
+        height: 100%;
+        transition: all 0.4s ease;
+        
+        color: var(--gray);
+        font-family: var(--dreamfont);
+       
+      }
+      .sidebar.collapsed {
+        width: 85px;
+      }
+      .sidebar .sidebar-header {
+        display: flex;
+        position: relative;
+        padding: 25px 20px;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .sidebar-header .header-logo img {
+        width: 46px;
+        height: 46px;
+        display: block;
+        object-fit: contain;
+        border-radius: 50%;
+      }
+      .sidebar-header .toggler {
+        height: 35px;
+        width: 35px;
+        color: #5d616e;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        background: #fff;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+        transition: 0.4s ease;
+      }
+      .sidebar-header .sidebar-toggler {
+        position: absolute;
+        right: 20px;
+      }
+      .sidebar-header .menu-toggler {
+        display: none;
+      }
+      .sidebar.collapsed .sidebar-header .toggler {
+        transform: translate(-4px, 65px);
+      }
+      .sidebar-header .toggler:hover {
+        background: #dde4fb;
+      }
+      .sidebar-header .toggler span {
+        font-size: 1.75rem;
+        transition: 0.4s ease;
+      }
+      .sidebar.collapsed .sidebar-header .toggler span {
+        transform: rotate(180deg);
+      }
+      .sidebar-nav .nav-list {
+        list-style: none;
+        display: flex;
+        gap: 4px;
+        padding: 0 15px;
+        flex-direction: column;
+        transform: translateY(15px);
+        transition: 0.4s ease;
+      }
+      .sidebar.collapsed .sidebar-nav .primary-nav {
+        transform: translateY(65px);
+      }
+      .sidebar-nav .nav-link {
+        color: #fff;
+        display: flex;
+        gap: 12px;
+        white-space: nowrap;
+        border-radius: 8px;
+        padding: 12px 15px;
+        align-items: center;
+        text-decoration: none;
+        transition: 0.4s ease;
+      }
+      .sidebar.collapsed .sidebar-nav .nav-link {
+        border-radius: 12px;
+      }
+      .sidebar .sidebar-nav .nav-link .nav-label {
+        transition: opacity 0.3s ease;
+      }
+      .sidebar.collapsed .sidebar-nav .nav-link .nav-label {
+        opacity: 0;
+        pointer-events: none;
+      }
+      .sidebar-nav .nav-link:hover {
+        color: #151A2D;
+        background: #fff;
+      }
+      .sidebar-nav .nav-item {
+        position: relative;
+      }
+      .sidebar-nav .nav-tooltip {
+        position: absolute;
+        top: -10px;
+        opacity: 0;
+        color: #151A2D;
+        display: none;
+        pointer-events: none;
+        padding: 6px 12px;
+        border-radius: 8px;
+        white-space: nowrap;
+        background: #fff;
+        left: calc(100% + 25px);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        transition: 0s;
+      }
+      .sidebar.collapsed .sidebar-nav .nav-tooltip {
+        display: block;
+      }
+      .sidebar-nav .nav-item:hover .nav-tooltip {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(50%);
+        transition: all 0.4s ease;
+      }
+      .sidebar-nav .secondary-nav {
+        position: absolute;
+        bottom: 30px;
+        width: 100%;
+      }
+      .sidebar{
+          color: var(--gray) !important;
+      }
+      /* Responsive media query code for small screens */
+      @media (max-width: 1024px) {
+        .sidebar {
+          height: 56px;
+          margin: 13px;
+          overflow-y: hidden;
+          scrollbar-width: none;
+          width: calc(100% - 26px);
+          max-height: calc(100vh - 26px);
+        }
+        .sidebar.menu-active {
+          overflow-y: auto;
+        }
+        .sidebar .sidebar-header {
+          position: sticky;
+          top: 0;
+          z-index: 20;
+          border-radius: 16px;
+          background: #151A2D;
+          padding: 8px 10px;
+        }
+        .sidebar-header .header-logo img {
+          width: 40px;
+          height: 40px;
+        }
+        .sidebar-header .sidebar-toggler,
+        .sidebar-nav .nav-item:hover .nav-tooltip {
+          display: none;
+        }
+        
+        .sidebar-header .menu-toggler {
+          display: flex;
+          height: 30px;
+          width: 30px;
+        }
+        .sidebar-header .menu-toggler span {
+          font-size: 1.3rem;
+        }
+        .sidebar .sidebar-nav .nav-list {
+          padding: 0 10px;
+        }
+        .sidebar-nav .nav-link {
+          gap: 10px;
+          padding: 10px;
+          font-size: 0.94rem;
+        }
+        .sidebar-nav .nav-link .nav-icon {
+          font-size: 1.37rem;
+        }
+        .sidebar-nav .secondary-nav {
+          position: relative;
+          bottom: 0;
+          margin: 40px 0 30px;
+        }
+       
+      }
+    :root{
+        --pink: rgb(191, 78, 135);
+        --red:#DF3002 ;
+        --blue:#004EAC;
+        --pink2:#FFA0D1;
+        --FONTCursr:  'Courier New', Courier, monospace;
+        --dreamfont:'Dream Avenue',san-serif;
+        --gray: #282828;
+        --gray2: #888888;
+    
+    }
+    
+    
+    body {
+        font-family: 'Inter', sans-serif;
+        background-color: black;
+    }
+
+    .ButtonMute{
+        width: 120px;
+        height: auto;
+        background-color: #F9FCFE;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 5px;
+        padding: 2%;
+        border-radius: 15px;
+        font-size: 14px;
+        color: var(--gray2);
+    }
+    .ButtonShape{
+        width: 100%;
+        height: max-content;
+        background-color:  #F9FCFE;
+        font-size: 13px;
+        color: var(--gray);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 4%;
+
+    }
+    .ButtonShape span{
+        display: flex;
+        justify-content:flex-start;
+        width: 50%;
+        align-items: center;
+        gap: 5%;
+    }
+    .IconDiv{
+        height: max-content;
+        background-color:  #F9FCFE;
+        font-size: 13px;
+        color: var(--gray);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 4%;
+        width: fit-content;
+        height: auto;
+    }
+    .leftside{
+        width: 20%;
+        height: 100%;
+       
+    }
+ 
+
+
+
+  .navbar{
+    position: fixed;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    transition: top 0.3s; /* Smooth hide effect */
+    z-index: 1000;
+   
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 10px;
+   margin: 0;
+   text-transform: capitalize;
+   
+  
+    
+  
+    
+  }
+  .navbar span{
+    width: fit-content;
+    height: fit-content;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+  
+    
+  }
+  .navbar span img{
+    width: 20px;
+    height: auto;
+  }
+  .CartIcon:hover,.UserAvatar:hover{
+    transition: 0.2;
+    cursor: pointer;
+    color: var(--pink2);
+    transition: transform 0.8s ease, color 0.3s ease; /* Smooth effect */
+    transform: scale(1.2); /* Makes the icon 20% bigger */
+    text-transform: capitalize;
+  }
+  .icons{
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    gap: 12px;
+    margin: 30px;
+    text-transform: capitalize;
+   
+   
+  }
+  .logo{
+    width: 30px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+    align-self: center;
+   
+    
+  }
+  .logo img{
+    height: 100%;
+    width: 100%;
+  }
+  .big{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    margin-top:4% ;
+  }
+  body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center ;
+  }
+
+  .nav-links{
+    display: flex;
+    align-items: center;
+    background: rgba(221, 221, 221, 0.562);
+    padding: 20px 15px;
+    border-radius: 12px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    width: fit-content;
+    height: fit-content;
+    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Times New Roman', Times, serif;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    align-self: center;
+    font-family: var(--dreamfont);
+  }
+  .nav-links li{
+    list-style: none;
+    margin: 0 12px;
+  }
+  .nav-links li a{
+    position: relative;
+    color: #333;
+    font-size: 10px;
+    font-weight: 500;
+   
+    text-decoration: none;
+    color: antiquewhite;
+  }
+  .nav-links li a:before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    width: 0%;
+    background: var(--pink2);
+    border-radius: 12px;
+    transition: all 0.4s ease;
+  }
+  .nav-links li a:hover:before{
+    width: 100%;
+  }
+  .nav-links li.center a:before{
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .nav-links li.upward a:before{
+    width: 100%;
+    bottom: -5px;
+    opacity: 0;
+  }
+  .nav-links li.upward a:hover:before{
+    bottom: 0px;
+    opacity: 1;
+  }
+  .nav-links li.forward a:before{
+    width: 100%;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s ease;
+  }
+  .nav-links li.forward a:hover:before{
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  .navbar{
+    position: fixed;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    transition: top 0.3s; /* Smooth hide effect */
+    z-index: 1000;
+   
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 10px;
+   margin: 0;
+   text-transform: capitalize;
+   top: 0;
+  
+    
+  
+    
+  }
+  </style>
+ 
+ </head>
+ <body  >
+
+    <div class="navbar">
+        <div class="logo">
+            
+        </div>
+        <ul class="nav-links">
+            <li><a href="test.html">Home</a></li>
+            <li class="center"><a href="#">Books</a></li>
+            <li class="upward"><a href="chat.html">ChatRoom</a></li>
+            
+          </ul>
+          
+
+          <div class="icons" >
+            <span class="CartIcon" >
+              
+              <img  id="notiIcon"src="./notification.png" alt="" width="20" height="auto">
+
+              <div id="dropdownMenu" class="dropdown-menu hidden">
+                <ul>
+                  <li class="notification-item">
+                    <div class="notification-content">
+                      <i class="fas fa-bell"></i>
+                      <p>New comment on your post</p>
+                    </div>
+                    <span class="notification-time">2 mins ago</span>
+                  </li>
+                  <li class="notification-item">
+                    <div class="notification-content">
+                      <i class="fas fa-bell"></i>
+                      <p>You have a new message</p>
+                    </div>
+                    <span class="notification-time">10 mins ago</span>
+                  </li>
+                  <li class="notification-item">
+                    <div class="notification-content">
+                      <i class="fas fa-bell"></i>
+                      <p>Someone liked your photo</p>
+                    </div>
+                    <span class="notification-time">1 hour ago</span>
+                  </li>
+                </ul>
+              </div>
+            </span>
+            <span class="CartIcon cartBtn" id="cartBtn">
+               
+               <img src="./shopping-bag (1).png" alt="" width="20" height="auto">
+            </span>
+            <span class="UserAvatar">
+                <a href="UserProfile.html">
+                <img src="./login.png" alt="" >
+              </a>
+            </span>
+            <span class="UserAvatar" onclick="op">
+              <a >
+              <img src="./login.png" alt="" id="openLoginForm">
+            </a>
+          </span>
+           </div>
+        
+    </div>
+    <div class="big">
+
+   
+  <div class="leftside" id="leftside">
+    <div class="LeftSide">
+        <aside class="sidebar">
+            <!-- Sidebar header -->
+            <header class="sidebar-header">
+              <a href="#" class="header-logo">
+                <img src="./fountain-pen-close-up.png" alt="CodingNepal">
+              </a>
+              <button class="toggler sidebar-toggler">
+                <span class="material-symbols-rounded">chevron_left</span>
+              </button>
+              <button class="toggler menu-toggler">
+                <span class="material-symbols-rounded">menu</span>
+              </button>
+            </header>
+            <nav class="sidebar-nav">
+              <!-- Primary top nav -->
+              <ul class="nav-list primary-nav">
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <span class="nav-icon material-symbols-rounded">dashboard</span>
+                    <span class="nav-label">Dashboard</span>
+                  </a>
+                  <span class="nav-tooltip">Dashboard</span>
+                </li>
+             
+                <li class="nav-item">
+                  <a href="chat.html" class="nav-link">
+                    <span class="nav-icon material-symbols-rounded">notifications</span>
+                  
+                    <span class="nav-label" >ChatRoom </span>
+                 
+                  </a>
+                  <span class="nav-tooltip">Notifications</span>
+                </li>
+              
+               
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <span class="nav-icon material-symbols-rounded">star</span>
+                    <span class="nav-label">Save To Read</span>
+                  </a>
+                  <span class="nav-tooltip">Bookmarks</span>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <span class="nav-icon material-symbols-rounded" onclick="openPopup()">settings</span>
+                    <span class="nav-label" onclick="openPopup()">Settings</span>
+                  </a>
+                  <span class="nav-tooltip" onclick="openPopup()">Settings</span>
+                </li>
+              </ul>
+              <!-- Secondary bottom nav -->
+              <ul class="nav-list ">
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <span class="nav-icon material-symbols-rounded">account_circle</span>
+                    <span class="nav-label">Profile</span>
+                  </a>
+                 
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <span class="nav-icon material-symbols-rounded">logout</span>
+                    <span class="nav-label">Logout</span>
+                  </a>
+                  <span class="nav-tooltip">Logout</span>
+                </li>
+              </ul>
+            </nav>
+          </aside>
+    </div>
+  </div>
+    
+  <div id="ChatContainer" class="w-[80%] flex flex-end justify-center align-center h-[100vh] border-4 border-[black]  rounded-2xl">
+   <!-- Sidebar -->
+   <div class="w-1/4  rounded-2xl border-gray-200 p-4 flex flex-col h-[100%]  bg-white" >
+    <div class="flex items-center mb-4">
+        <div class="IconDiv" class="w-[30%]">
+            <i class="fi fi-ts-arrow-left-from-arc" style="color: #888888;"></i>
+        </div>
+      
+    
+     <div>
+      <div class="font-semibold">
+       
+      </div>
+      <div class="text-sm text-gray-500">
+        Welcome Ahsan Pratama
+      </div>
+      
+     </div>
+    </div>
+    <div class="relative mb-4">
+     <input class="w-full p-2 pl-10 border rounded-[23px] focus:outline-none focus:ring-2 focus:ring-blue-500 bg-[#F5F8FA]" placeholder="Search message" type="text"/>
+     <i class="fas fa-search absolute left-3 top-3 text-gray-400">
+     </i>
+    </div>
+    <div class="overflow-y-auto flex-1">
+     
+     
+   
+    
+        <div class="overflow-y-auto flex-1">
+            <div class="flex items-center mb-4">
+                <img alt="The Hobbit Cover" class="rounded-full mr-3" height="40" src="./images/book-11.png" width="40"/>
+                <div class="flex-1">
+                    <div class="text-sm">
+                        📖 The Hobbit
+                    </div>
+                    <div class="text-sm text-gray-300">
+                        🏔️ A community discussing Middle-earth adventures!
+                    </div>
+                </div>
+                <div class="text-xs text-gray-300">
+                    12:57 <i class="fas fa-comments text-gray-500 ml-2"></i>
+                </div>
+            </div>
+            <div class="flex items-center mb-4">
+                <img alt="The Hobbit Cover" class="rounded-full mr-3" height="40" src="./images/book-12.png" width="40"/>
+                <div class="flex-1">
+                    <div class="text-sm">
+                        📖 The Hobbit
+                    </div>
+                    <div class="text-sm text-gray-300">
+                        🏔️ A community discussing Middle-earth adventures!
+                    </div>
+                </div>
+                <div class="text-xs text-gray-300">
+                    12:57 <i class="fas fa-comments text-gray-500 ml-2"></i>
+                </div>
+            </div>
+            
+        
+          
+        
+       
+        
+           
+        </div>
+        
+    </div>
+   </div>
+   <!-- Main Chat Area -->
+   <div class="w-1/2 flex flex-col height-fit bg-[white] rounded-2xl border-gray-200">
+    <div class="flex items-center justify-between p-4 border-b border-gray-200 bg-[#F5F8FA] rounded-2xl ">
+     <div class="flex items-center">
+      <img alt="Group avatar" class="rounded-full mr-3" height="40" src="./images/book-10.png" width="40"/>
+      <div>
+       <div class="font-semibold">
+        Dribbble &amp; Behance Familia 🏀
+       </div>
+       <div class="text-sm text-gray-500">
+        1232 Members • 200 Online
+       </div>
+      </div>
+     </div>
+    
+    </div>
+    <div class="flex-1 p-4 bg-[#F5F8FA] overflow-y-auto">
+     
+     <div class="space-y-4">
+      <div class="flex items-start">
+       <img alt="User avatar" class="rounded-full mr-3" height="40" src="./images/book-13.png" width="40"/>
+       <div>
+        <div class="text-sm text-gray-500">
+         @everyone
+        </div>
+        <div class="bg-white p-3 rounded-lg shadow-sm">
+         Ada member baru lagi nih, namanya Ahsan
+        </div>
+       </div>
+      </div>
+      <div class="flex items-start">
+       <img alt="User avatar" class="rounded-full mr-3" height="40" src="./images/book-2.png" width="40"/>
+       <div>
+        <div class="text-sm text-gray-500">
+         Andik Firman • 12:54
+        </div>
+        <div class="bg-white p-3 rounded-lg shadow-sm">
+         Oiyaa, salam kenal Ahsan, aku Andik aku dari Ngawi hehe 😁
+        </div>
+       </div>
+      </div>
+      <div class="flex items-end justify-end">
+       <div>
+        <div class="text-sm text-gray-500 text-right">
+         You • 12:55
+        </div>
+        <div class=" text-gray-300 p-3 rounded-2xl shadow-sm bg-[#9B6CE7]">
+         Hi @everyone, Salam kenal yaa, aku Ahsan pratama dari Solo... btw ini group buat apaan yak?
+        </div>
+       </div>
+       <img alt="User avatar" class="rounded-full ml-3" height="40" src="./images/book-7.png" width="40"/>
+      </div>
+     </div>
+      </div>
+  
+  
+    
+    
+    <div class="p-4 border-t border-gray-200 bg-white flex items-center">
+     <input class="w-full p-2 pl-10 border rounded-[23px] focus:outline-none focus:ring-2 focus:ring-blue-500 bg-[#F5F8FA]" placeholder="Type a message..." type="text"/>
+     <i class="fas fa-paper-plane text-blue-500 ml-4">
+     </i>
+    </div>
+   </div>
+   <!-- Right Sidebar -->
+   <div class="w-1/4 bg-white rounded-2xl border-gray-200 p-4 flex flex-col ">
+    <div class="flex items-center mb-4">
+     <img alt="Group avatar" class="rounded-full mr-3" height="40" src="https://placehold.co/40x40" width="40"/>
+     <div>
+      <div class="font-semibold">
+       Dribbble &amp; Behance Familia 🏀
+      </div>
+      <div class="text-sm text-gray-500">
+       1232 Members • 200 Online
+      </div>
+     </div>
+    </div>
+    <div class="flex flex-row  mb-4 justify-center gap-[5%]">
+        <!-- HTML !-->
+         <div class="ButtonMute">
+            <i class="fi fi-tr-music-note-slash"></i>
+            <span>Unmute</span>
+         </div>
+
+         <div class="ButtonMute">
+            <i class="fi fi-ss-leave" style="color: var(--red);"></i>
+            <span>Leave</span>
+         </div>
+
+
+
+           
+              
+              
+              
+        
+    
+      
+    
+        
+    </div>
+    
+    <div class="space-y-4 mb-4">
+     <div class="ButtonShape">
+      <span>
+        <i class="fi fi-ts-book-open-cover" style="color: var(--pink2);"></i>
+      Book Name
+      </span>
+      <span class="text-gray-500">
+       Alice in WonderLand
+       <i class="fi fi-rr-arrow-right"></i>
+      </span>
+      </div>
+      <div class="ButtonShape">
+        
+        <span>
+         
+            <i class="fi fi-rr-copyright" style="color: var(--blue);"></i>
+        Author
+        </span>
+        <span class="text-gray-500">
+         Harrry Poter
+         <i class="fi fi-rr-arrow-right"></i>
+        </span>
+        </div>
+
+        <div class="ButtonShape">
+        
+            <span>
+             
+                <i class="fi fi-rs-star" style="color: rgb(218, 218, 164);"></i>
+            Rating
+            </span>
+            <span class="text-gray-500">
+             3.4
+             <i class="fi fi-rr-arrow-right"></i>
+            </span>
+            </div>
+
+    
+     
+    </div>
+    <div class="text-gray-500 mb-4">
+     1232 Members
+    </div>
+    <div class="relative mb-4">
+     <input class="w-full p-2 pl-10 border rounded-[23px] focus:outline-none focus:ring-2 focus:ring-blue-500 bg-[#F5F8FA]" placeholder="Search members" type="text"/>
+     <i class="fas fa-search absolute left-3 top-3 text-gray-400">
+     </i>
+    </div>
+    <div class="overflow-y-auto flex-1">
+     <div class="flex items-center mb-4">
+      <img alt="Ahsan Pratama avatar" class="rounded-full mr-3" height="40" src="https://placehold.co/40x40" width="40"/>
+      <div>
+       <div class="text-sm text-gray-600">
+        Ahsan Pratama
+       </div>
+       <div class="text-sm text-gray-400">
+        @ahsanpratamaa
+       </div>
+      </div>
+     </div>
+
+
+     <div class="flex items-center mb-4">
+        <img alt="Ahsan Pratama avatar" class="rounded-full mr-3" height="40" src="https://placehold.co/40x40" width="40"/>
+        <div>
+         <div class="text-sm text-gray-600">
+          Ahsan Pratama
+         </div>
+         <div class="text-sm text-gray-400">
+          @ahsanpratamaa
+         </div>
+        </div>
+       </div>
+   
+   
+   
+   
+    </div>
+   </div>
+  </div>
+
+
+
+
+   <!-- Popup Form (Hidden by Default) -->
+   <div id="popup" class="fixed w-[100%] h-fit  inset-0 flex items-center justify-center bg-[white] bg-opacity-90 align-self-center bg-white z-[1000] overflow-y-scroll hidden ">
+    <div class="w-fit h-[100%] flex justify-center ">
+     
+    
+
+  <!--Edit form-->
+  <form class="EditProfileForm flex-colomn w-[80%] h-[100%]  mb-[2em] " asp-action="EditProfile" enctype="multipart/form-data">
+    <div class="flex flex-col  w-full">
+      <button onclick="closePopup()" class="text-gray-500 hover:text-gray-700 text-4xl ml-auto">&times;</button>
+  </div>
+    <input type="text"  asp-for="@Model.accountid" name="accountid" hidden/>
+     <h2 style="align-self: center;margin-top: 2% !important;">Profile Information</h2>
+     
+   
+     <h5>Photo</h5>
+     <div class="ImageSection flex-row">
+         <!-- Display the Current Image -->
+         <div class="ImageHolder">
+              <input type="text" asp-for="@Model.UserImageLink" hidden>
+             <img src="@Url.Content(Model.UserImageLink)" id="preview" alt="Current Profile Image" style="width: 150px; height: 150px;"  />
+             <input type="text" asp-for="UserImageLink"  hidden>
+         </div>
+ 
+         <div class="ImageInfo flex-column SpaceBetween">
+             <!-- Update Image Section -->
+             <div class="Image flex-row">
+                 <p for="ProfileImage" id="updateLabel">Update</p>
+ 
+                 <!-- Hidden File Input -->
+                 <div class="form-group">
+                     <input type="file" id="ProfileImage" name="UserImage" accept="image/*" asp-for="UserImage" style="display:none;" onchange="previewImage(event)" />
+                 </div>
+ 
+                 <p style="color: black;">Remove</p>
+             </div>
+ 
+             <!-- Extra Info for Image Requirements -->
+             <div class="ExtraInfo">
+                 <p>Recommended: Square JPG, PNG, or GIF, at least 1,000 pixels per side.</p>
+             </div>
+         </div>
+     </div>
+ 
+     <div class="UserName">
+         <h5>UserName</h5>
+         <textarea class="block p-2.5 w-[50%] text-sm text-gray-900 bg-gray-100 rounded-lg focus:ring-0 focus:outline-none h-24 resize-none" 
+                   placeholder="UserName..." asp-for="UserName" 
+                   style="height: 20px !important; font-size: 10px;"></textarea>
+     </div>
+ 
+     <div class="UserDescription">
+         <h5>Description</h5>
+         <textarea id="textarea"
+                   class="block p-2.5 w-full text-[12px]  bg-gray-100 rounded-lg focus:ring-0 focus:outline-none h-24 resize-none" 
+                   placeholder="UserDescription..." asp-for="UserDescription" 
+                   style="height: 150px !important; font-size: 10px; color: #1a1a1a;"></textarea>
+     </div>
+ 
+     <div class="UserPreferedCategories flex flex-row gap-3 flex-wrap mt-[3rem]   w-[100%] ">
+         <h5>LOVE TO READ?</h5>
+ 
+         <!-- Tech button -->
+         <button class="w-fit h-fit flex justify-center gap-2 items-center mx-auto shadow-xl text-[9px] text-gray-50 bg-[#0A0D2D] backdrop-blur-md lg:font-semibold isolation-auto border-gray-50 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-[#FFFFFF] hover:text-black before:-z-10 before:aspect-square before:hover:scale-200 before:hover:duration-500 relative z-10 px-4 py-2 overflow-hidden border-2 rounded-full group" type="submit">
+             Techology
+             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 19" class="w-7 h-7 justify-end bg-gray-50 group-hover:rotate-90 group-hover:bg-gray-50 text-gray-50 ease-linear duration-300 rounded-full border border-gray-700 group-hover:border-gray-700 p-2 rotate-45">
+                 <path class="fill-gray-800 group-hover:fill-gray-800" d="M7 18C7 18.5523 7.44772 19 8 19C8.55228 19 9 18.5523 9 18H7ZM8.70711 0.292893C8.31658 -0.0976311 7.68342 -0.0976311 7.29289 0.292893L0.928932 6.65685C0.538408 7.04738 0.538408 7.68054 0.928932 8.07107C1.31946 8.46159 1.95262 8.46159 2.34315 8.07107L8 2.41421L13.6569 8.07107C14.0474 8.46159 14.6805 8.46159 15.0711 8.07107C15.4616 7.68054 15.4616 7.04738 15.0711 6.65685L8.70711 0.292893ZM9 18L9 1H7L7 18H9Z"></path>
+             </svg>
+         </button>
+ 
+         <!-- Health button -->
+         <button class="w-fit h-fit font-sans flex justify-center gap-2 items-center mx-auto shadow-xl text-[9px] text-gray-50 bg-[#0A0D2D] backdrop-blur-md lg:font-semibold isolation-auto border-gray-50 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-[#FFFFFF] hover:text-black before:-z-10 before:aspect-square before:hover:scale-200 before:hover:duration-500 relative z-10 px-4 py-2 overflow-hidden border-2 rounded-full group" type="submit">
+             Health
+             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-7 h-7 justify-end bg-gray-50 group-hover:rotate-90 group-hover:bg-gray-50 text-gray-50 ease-linear duration-300 rounded-full border border-gray-700 group-hover:border-gray-700 p-2 rotate-45">
+                 <path class="fill-gray-800 group-hover:fill-gray-800" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path>
+             </svg>
+         </button>
+ 
+         <!-- Fun button -->
+         <button class="w-fit h-fit font-sans flex justify-center gap-2 items-center mx-auto shadow-xl text-[9px] text-gray-50 bg-[#0A0D2D] backdrop-blur-md lg:font-semibold isolation-auto border-gray-50 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-[#FFFFFF] hover:text-black before:-z-10 before:aspect-square before:hover:scale-200 before:hover:duration-500 relative z-10 px-4 py-2 overflow-hidden border-2 rounded-full group" type="submit">
+             Fun
+             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-7 h-7 justify-end bg-gray-50 group-hover:rotate-90 group-hover:bg-gray-50 text-gray-50 ease-linear duration-300 rounded-full border border-gray-700 group-hover:border-gray-700 p-2 rotate-45">
+                 <path class="fill-gray-800 group-hover:fill-gray-800" d="M12 2c5.52 0 10 4.48 10 10s-4.48 10-10 10-10-4.48-10-10 4.48-10 10-10zm0 18c4.41 0 8-3.59 8-8s-3.59-8-8-8-8 3.59-8 8 3.59 8 8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"></path>
+                 <path class="fill-gray-800 group-hover:fill-gray-800" d="M17 12c0 1.66-1.34 3-3 3s-3-1.34-3-3 1.34-3 3-3 3 1.34 3 3zm1-6h-2v6h2zm-7 3h2v6h-2zm-2 2h2v2h-2z"></path>
+             </svg>
+         </button>
+ 
+         <!-- Literature button -->
+         <button class="w-fit h-fit font-sans flex justify-center gap-2 items-center mx-auto shadow-xl text-[9px] text-gray-50 bg-[#0A0D2D] backdrop-blur-md lg:font-semibold isolation-auto border-gray-50 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-[#FFFFFF] hover:text-black before:-z-10 before:aspect-square before:hover:scale-200 before:hover:duration-500 relative z-10 px-4 py-2 overflow-hidden border-2 rounded-full group" type="submit">
+             Literature
+             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-7 h-7 justify-end bg-gray-50 group-hover:rotate-90 group-hover:bg-gray-50 text-gray-50 ease-linear duration-300 rounded-full border border-gray-700 group-hover:border-gray-700 p-2 rotate-45">
+                 <path class="fill-gray-800 group-hover:fill-gray-800" d="M3 4v16h18V4H3zm4 1h10v14H7V5z"></path>
+             </svg>
+         </button>
+ 
+         <!-- Politics button -->
+         <button class="w-fit h-fit font-sans flex justify-center gap-2 items-center mx-auto shadow-xl text-[9px] text-gray-50 bg-[#0A0D2D] backdrop-blur-md lg:font-semibold isolation-auto border-gray-50 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-[#FFFFFF] hover:text-black before:-z-10 before:aspect-square before:hover:scale-200 before:hover:duration-500 relative z-10 px-4 py-2 overflow-hidden border-2 rounded-full group" type="submit">
+             Politics
+             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-7 h-7 justify-end bg-gray-50 group-hover:rotate-90 group-hover:bg-gray-50 text-gray-50 ease-linear duration-300 rounded-full border border-gray-700 group-hover:border-gray-700 p-2 rotate-45">
+                 <path class="fill-gray-800 group-hover:fill-gray-800" d="M3 2h1v16H3V2zm5 5h12l-5 7h-7l-5-7z"></path>
+             </svg>
+         </button>
+     </div>
+ 
+     <div class="w-full h-[2px] bg-gray-100 "></div>
+ 
+     <div class="Options w-full flex gap-2 items-end justify-end mt-[2rem]">
+         <button class="save-button cancel-button">
+             <div class="svg-wrapper-1">
+                 <div class="svg-wrapper">
+                     <svg style="all: unset;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30">
+                         <path d="M22,15.04C22,17.23 20.24,19 18.07,19H5.93C3.76,19 2,17.23 2,15.04C2,13.07 3.43,11.44 5.31,11.14C5.28,11 5.27,10.86 5.27,10.71C5.27,9.33 6.38,8.2 7.76,8.2C8.37,8.2 8.94,8.43 9.37,8.8C10.14,7.05 11.13,5.44 13.91,5.44C17.28,5.44 18.87,8.06 18.87,10.83C18.87,10.94 18.87,11.06 18.86,11.17C20.65,11.54 22,13.13 22,15.04Z"></path>
+                     </svg>
+                 </div>
+             </div>
+             <span>Cancel</span>
+         </button>
+ 
+         <button class="save-button" type="submit">
+             <div class="svg-wrapper-1">
+                 <div class="svg-wrapper">
+                     <svg style="all: unset;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" class="icon">
+                         <path d="M22,15.04C22,17.23 20.24,19 18.07,19H5.93C3.76,19 2,17.23 2,15.04C2,13.07 3.43,11.44 5.31,11.14C5.28,11 5.27,10.86 5.27,10.71C5.27,9.33 6.38,8.2 7.76,8.2C8.37,8.2 8.94,8.43 9.37,8.8C10.14,7.05 11.13,5.44 13.91,5.44C17.28,5.44 18.87,8.06 18.87,10.83C18.87,10.94 18.87,11.06 18.86,11.17C20.65,11.54 22,13.13 22,15.04Z"></path>
+                     </svg>
+                 </div>
+             </div>
+             <span>Save</span>
+         </button>
+     </div>
+ </form>
+   </div>
+  </div>
+
+</div>
+ </body>
+ <script>
+    const sidebar = document.querySelector(".sidebar");
+    const sidebarToggler = document.querySelector(".sidebar-toggler");
+    const menuToggler = document.querySelector(".menu-toggler");
+    const ChatContainer=document.getElementById("ChatContainer"); 
+    const leftside=document.getElementById('leftside');
+    // Ensure these heights match the CSS sidebar height values
+    let collapsedSidebarHeight = "56px"; // Height in mobile view (collapsed)
+    let fullSidebarHeight = "calc(100vh - 32px)"; // Height in larger screen
+    // Toggle sidebar's collapsed state
+    sidebarToggler.addEventListener("click", () => {
+      sidebar.classList.toggle("collapsed");
+      leftside.style.width='fit-content';
+      
+      ChatContainer.style.width='95%';
+      
+    });
+    // Update sidebar height and menu toggle text
+    const toggleMenu = (isMenuActive) => {
+      sidebar.style.height = isMenuActive ? `${sidebar.scrollHeight}px` : collapsedSidebarHeight;
+      menuToggler.querySelector("span").innerText = isMenuActive ? "close" : "menu";
+    }
+    // Toggle menu-active class and adjust height
+    menuToggler.addEventListener("click", () => {
+      toggleMenu(sidebar.classList.toggle("menu-active"));
+    });
+    // (Optional code): Adjust sidebar height on window resize
+    window.addEventListener("resize", () => {
+      if (window.innerWidth >= 1024) {
+        sidebar.style.height = fullSidebarHeight;
+      } else {
+        sidebar.classList.remove("collapsed");
+        sidebar.style.height = "auto";
+        toggleMenu(sidebar.classList.contains("menu-active"));
+      }
+    });
+    function openPopup() {
+        document.getElementById("popup").classList.remove("hidden");
+    }
+  
+    function closePopup() {
+        document.getElementById("popup").classList.add("hidden");
+    }
+  
+    // Close when clicking outside
+    document.getElementById("popup").addEventListener("click", function(event) {
+        if (event.target === this) {
+            closePopup();
+        }
+    });
+</script>
+</html>

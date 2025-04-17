@@ -1,0 +1,73 @@
+.signature-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .signature-input {
+    padding: 12px 15px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    width: 100%;
+    transition: border-color 0.3s;
+  }
+  
+  .signature-input:focus {
+    outline: none;
+    border-color: #1a73e8;
+  }
+  
+  .signature-display {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    border: 1px dashed #ccc;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  
+  .signature-canvas {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .signature-placeholder {
+    color: #999;
+    font-style: italic;
+  }
+  
+  .signature-preview {
+    font-family: 'Brush Script MT', cursive;
+    font-size: 36px;
+    color: #333;
+    text-align: center;
+    min-height: 50px;
+  }
+  
+  .signature-char {
+    display: inline-block;
+    animation: fadeIn 0.3s forwards;
+    opacity: 0;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Add a handwriting font */
+  @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');

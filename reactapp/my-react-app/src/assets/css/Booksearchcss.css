@@ -1,0 +1,85 @@
+.dropdown-wrapper {
+    position: relative; /* <-- Important: parent must be relative */
+    width: max-content; /* or set a fixed width */
+  }
+  
+  .dropdown-container {
+    position:relative;
+    top: 100%; /* Right below the input field */
+    left: 0;
+    width: 100%; /* Matches the wrapper width */
+    
+    margin-top: 8px;
+    background-color: #74817d;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+    max-height: 24rem;
+    overflow-y: auto;
+    transition: max-height 0.3s ease-in-out;
+    
+  }
+  
+  
+  /* Dropdown Section */
+  .dropdown-section {
+    border-bottom: 1px solid #14161c;
+  }
+  
+  /* Header of each section (Books, Authors, Categories) */
+  .dropdown-header {
+    padding: 12px 16px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #000; /* Black text */
+    text-transform: uppercase;
+  }
+  
+  /* Items inside dropdown (Books, Authors, Categories) */
+  .dropdown-item {
+    padding: 12px 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    color: #000; /* Black text */
+  }
+  
+  .dropdown-item:hover {
+    background-color: rgba(52, 223, 183, 0.3); /* Darker red on hover */
+  }
+  
+  /* Title of each item */
+  .item-title {
+    font-weight: 500;
+    font-size: 1rem;
+    color: #000; /* Black text */
+  }
+  
+  /* Subtext (like author name and category) */
+  .item-subtext {
+    font-size: 0.875rem;
+    color: #4a5568; /* Gray text */
+  }
+  
+  /* Author Item (with image) */
+  .author-item {
+    display: flex;
+    align-items: center;
+  }
+  
+  .author-image {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin-right: 12px;
+    object-fit: cover;
+  }
+  
+  /* No results found message */
+  .no-results {
+    padding: 12px 16px;
+    color: #000; /* Black text */
+    font-size: 0.875rem;
+    text-align: center;
+  }
+  

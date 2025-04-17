@@ -1,0 +1,7 @@
+{
+    "recommendations": [
+        "ms-dotnettools.csharp",
+        "ms-vscode.cpptools",
+        "ms-vscode.cpptools-extension-pack"
+    ]
+}

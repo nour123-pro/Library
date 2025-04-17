@@ -1,0 +1,252 @@
+
+.navbar{
+    position: fixed;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    transition: top 0.3s; /* Smooth hide effect */
+    z-index: 1000;
+   
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 10px;
+   margin: 0;
+   text-transform: capitalize;
+  
+  
+   
+  
+    
+  
+    
+  }
+  .navbar span{
+    width: fit-content;
+    height: fit-content;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+  
+    
+  }
+  .navbar span img{
+    width: 20px;
+    height: auto;
+  }
+  .CartIcon:hover,.UserAvatar:hover{
+    transition: 0.2;
+    cursor: pointer;
+    color: var(--pink2);
+    transition: transform 0.8s ease, color 0.3s ease; /* Smooth effect */
+    transform: scale(1.2); /* Makes the icon 20% bigger */
+    text-transform: capitalize;
+  }
+  .icons{
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    gap: 12px;
+    margin: 30px;
+    text-transform: capitalize;
+   
+   
+  }
+  .logo{
+    width: 30px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+    align-self: center;
+   
+    
+  }
+  .logo img{
+    height: 100%;
+    width: 100%;
+  }
+
+
+
+  .nav-links{
+    display: flex;
+    align-items: center;
+    background: rgba(221, 221, 221, 0.562);
+    padding: 20px 15px;
+    border-radius: 12px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    width: fit-content;
+    height: fit-content;
+    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Times New Roman', Times, serif;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    align-self: center;
+    font-family: var(--dreamfont);
+    z-index:100000000;
+  }
+  .nav-links li{
+    list-style: none;
+    margin: 0 12px;
+  }
+  .nav-links li a{
+    position: relative;
+    color: #333;
+    font-size: 10px;
+    font-weight: 500;
+   
+    text-decoration: none;
+    color: antiquewhite;
+  }
+  .nav-links li a:before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    width: 0%;
+    background: var(--pink2);
+    border-radius: 12px;
+    transition: all 0.4s ease;
+  }
+  .nav-links li a:hover:before{
+    width: 100%;
+  }
+  .nav-links li.center a:before{
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .nav-links li.upward a:before{
+    width: 100%;
+    bottom: -5px;
+    opacity: 0;
+  }
+  .nav-links li.upward a:hover:before{
+    bottom: 0px;
+    opacity: 1;
+  }
+  .nav-links li.forward a:before{
+    width: 100%;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s ease;
+  }
+  .nav-links li.forward a:hover:before{
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+
+  
+@media (min-width: 576px) {
+    .navbar {
+        flex-direction: row; /* Horizontal layout */
+        padding: 0;
+    }
+    
+    .nav-links {
+        display: flex;
+        flex-direction: row; /* Horizontal links */
+        width: fit-content;
+        padding: 15px;
+    }
+    
+    .navbar span {
+        margin: 0;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .navbar {
+        font-size: 12px;
+    }
+    
+    .nav-links li {
+        margin: 0 15px;
+    }
+    
+    .nav-links li a {
+        font-size: 12px;
+    }
+    
+    .logo {
+        width: 40px;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .navbar {
+        font-size: 14px;
+    }
+    
+    .nav-links li {
+        margin: 0 20px;
+    }
+    
+    .nav-links li a {
+        font-size: 14px;
+    }
+    
+    .icons {
+        margin: 30px;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .nav-links li {
+        margin: 0 25px;
+    }
+    
+    .nav-links li a {
+        font-size: 16px;
+    }
+}
+
+/* Hover effects (for devices that support hover) */
+@media (hover: hover) {
+    .CartIcon:hover, .UserAvatar:hover {
+        transition: 0.2s;
+        cursor: pointer;
+        color: var(--pink2);
+        transition: transform 0.8s ease, color 0.3s ease;
+        transform: scale(1.2);
+    }
+    
+    .nav-links li a:hover:before {
+        width: 100%;
+    }
+    
+    .nav-links li.upward a:hover:before {
+        bottom: 0px;
+        opacity: 1;
+    }
+    
+    .nav-links li.forward a:hover:before {
+        transform: scaleX(1);
+        transform-origin: left;
+    }
+}
+
+/* Mobile menu toggle button (add this HTML: <button class="mobile-menu-toggle">☰</button>) */
+.mobile-menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: antiquewhite;
+    margin: 10px;
+}
+
+@media (min-width: 576px) {
+    .mobile-menu-toggle {
+        display: none;
+    }
+}

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.0/dist/tailwind.min.css" rel="stylesheet">
+   <!-- Add Font Awesome CDN link in your HTML head -->
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+   <link rel="stylesheet" href="editform.css">
+
+   
+  
+      <form class="EditProfileForm flex-colomn " asp-action="EditProfile" enctype="multipart/form-data">
+      <input type="text"  asp-for="@Model.accountid" name="accountid" hidden/>
+       <h2 style="align-self: center;">Profile Information</h2>
+       
+     
+       <h5>Photo</h5>
+       <div class="ImageSection flex-row">
+           <!-- Display the Current Image -->
+           <div class="ImageHolder">
+                <input type="text" asp-for="@Model.UserImageLink" hidden>
+               <img src="@Url.Content(Model.UserImageLink)" id="preview" alt="Current Profile Image" style="width: 150px; height: 150px;"  />
+               <input type="text" asp-for="UserImageLink"  hidden>
+           </div>
+   
+           <div class="ImageInfo flex-column SpaceBetween">
+               <!-- Update Image Section -->
+               <div class="Image flex-row">
+                   <p for="ProfileImage" id="updateLabel">Update</p>
+   
+                   <!-- Hidden File Input -->
+                   <div class="form-group">
+                       <input type="file" id="ProfileImage" name="UserImage" accept="image/*" asp-for="UserImage" style="display:none;" onchange="previewImage(event)" />
+                   </div>
+   
+                   <p>Remove</p>
+               </div>
+   
+               <!-- Extra Info for Image Requirements -->
+               <div class="ExtraInfo">
+                   <p>Recommended: Square JPG, PNG, or GIF, at least 1,000 pixels per side.</p>
+               </div>
+           </div>
+       </div>
+   
+       <div class="UserName">
+           <h5>UserName</h5>
+           <textarea class="block p-2.5 w-[50%] text-sm text-gray-900 bg-gray-100 rounded-lg focus:ring-0 focus:outline-none h-24 resize-none" 
+                     placeholder="UserName..." asp-for="UserName" 
+                     style="height: 20px !important; font-size: 10px;"></textarea>
+       </div>
+   
+       <div class="UserDescription">
+           <h5>Description</h5>
+           <textarea id="textarea"
+                     class="block p-2.5 w-full text-[12px]  bg-gray-100 rounded-lg focus:ring-0 focus:outline-none h-24 resize-none" 
+                     placeholder="UserDescription..." asp-for="UserDescription" 
+                     style="height: 150px !important; font-size: 10px; color: #1a1a1a;"></textarea>
+       </div>
+   
+       <div class="UserPreferedCategories flex gap-5 flex-wrap mt-[3rem] items-start bg-red">
+           <h5>LOVE TO READ?</h5>
+   
+           <!-- Tech button -->
+           <button class="font-sans flex justify-center gap-2 items-center mx-auto shadow-xl text-[9px] text-gray-50 bg-[#0A0D2D] backdrop-blur-md lg:font-semibold isolation-auto border-gray-50 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-[#FFFFFF] hover:text-black before:-z-10 before:aspect-square before:hover:scale-200 before:hover:duration-500 relative z-10 px-4 py-2 overflow-hidden border-2 rounded-full group" type="submit">
+               Techology
+               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 19" class="w-7 h-7 justify-end bg-gray-50 group-hover:rotate-90 group-hover:bg-gray-50 text-gray-50 ease-linear duration-300 rounded-full border border-gray-700 group-hover:border-gray-700 p-2 rotate-45">
+                   <path class="fill-gray-800 group-hover:fill-gray-800" d="M7 18C7 18.5523 7.44772 19 8 19C8.55228 19 9 18.5523 9 18H7ZM8.70711 0.292893C8.31658 -0.0976311 7.68342 -0.0976311 7.29289 0.292893L0.928932 6.65685C0.538408 7.04738 0.538408 7.68054 0.928932 8.07107C1.31946 8.46159 1.95262 8.46159 2.34315 8.07107L8 2.41421L13.6569 8.07107C14.0474 8.46159 14.6805 8.46159 15.0711 8.07107C15.4616 7.68054 15.4616 7.04738 15.0711 6.65685L8.70711 0.292893ZM9 18L9 1H7L7 18H9Z"></path>
+               </svg>
+           </button>
+   
+           <!-- Health button -->
+           <button class="font-sans flex justify-center gap-2 items-center mx-auto shadow-xl text-[9px] text-gray-50 bg-[#0A0D2D] backdrop-blur-md lg:font-semibold isolation-auto border-gray-50 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-[#FFFFFF] hover:text-black before:-z-10 before:aspect-square before:hover:scale-200 before:hover:duration-500 relative z-10 px-4 py-2 overflow-hidden border-2 rounded-full group" type="submit">
+               Health
+               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-7 h-7 justify-end bg-gray-50 group-hover:rotate-90 group-hover:bg-gray-50 text-gray-50 ease-linear duration-300 rounded-full border border-gray-700 group-hover:border-gray-700 p-2 rotate-45">
+                   <path class="fill-gray-800 group-hover:fill-gray-800" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path>
+               </svg>
+           </button>
+   
+           <!-- Fun button -->
+           <button class="font-sans flex justify-center gap-2 items-center mx-auto shadow-xl text-[9px] text-gray-50 bg-[#0A0D2D] backdrop-blur-md lg:font-semibold isolation-auto border-gray-50 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-[#FFFFFF] hover:text-black before:-z-10 before:aspect-square before:hover:scale-200 before:hover:duration-500 relative z-10 px-4 py-2 overflow-hidden border-2 rounded-full group" type="submit">
+               Fun
+               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-7 h-7 justify-end bg-gray-50 group-hover:rotate-90 group-hover:bg-gray-50 text-gray-50 ease-linear duration-300 rounded-full border border-gray-700 group-hover:border-gray-700 p-2 rotate-45">
+                   <path class="fill-gray-800 group-hover:fill-gray-800" d="M12 2c5.52 0 10 4.48 10 10s-4.48 10-10 10-10-4.48-10-10 4.48-10 10-10zm0 18c4.41 0 8-3.59 8-8s-3.59-8-8-8-8 3.59-8 8 3.59 8 8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"></path>
+                   <path class="fill-gray-800 group-hover:fill-gray-800" d="M17 12c0 1.66-1.34 3-3 3s-3-1.34-3-3 1.34-3 3-3 3 1.34 3 3zm1-6h-2v6h2zm-7 3h2v6h-2zm-2 2h2v2h-2z"></path>
+               </svg>
+           </button>
+   
+           <!-- Literature button -->
+           <button class="font-sans flex justify-center gap-2 items-center mx-auto shadow-xl text-[9px] text-gray-50 bg-[#0A0D2D] backdrop-blur-md lg:font-semibold isolation-auto border-gray-50 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-[#FFFFFF] hover:text-black before:-z-10 before:aspect-square before:hover:scale-200 before:hover:duration-500 relative z-10 px-4 py-2 overflow-hidden border-2 rounded-full group" type="submit">
+               Literature
+               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-7 h-7 justify-end bg-gray-50 group-hover:rotate-90 group-hover:bg-gray-50 text-gray-50 ease-linear duration-300 rounded-full border border-gray-700 group-hover:border-gray-700 p-2 rotate-45">
+                   <path class="fill-gray-800 group-hover:fill-gray-800" d="M3 4v16h18V4H3zm4 1h10v14H7V5z"></path>
+               </svg>
+           </button>
+   
+           <!-- Politics button -->
+           <button class="font-sans flex justify-center gap-2 items-center mx-auto shadow-xl text-[9px] text-gray-50 bg-[#0A0D2D] backdrop-blur-md lg:font-semibold isolation-auto border-gray-50 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-[#FFFFFF] hover:text-black before:-z-10 before:aspect-square before:hover:scale-200 before:hover:duration-500 relative z-10 px-4 py-2 overflow-hidden border-2 rounded-full group" type="submit">
+               Politics
+               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-7 h-7 justify-end bg-gray-50 group-hover:rotate-90 group-hover:bg-gray-50 text-gray-50 ease-linear duration-300 rounded-full border border-gray-700 group-hover:border-gray-700 p-2 rotate-45">
+                   <path class="fill-gray-800 group-hover:fill-gray-800" d="M3 2h1v16H3V2zm5 5h12l-5 7h-7l-5-7z"></path>
+               </svg>
+           </button>
+       </div>
+   
+       <div class="w-full h-[2px] bg-gray-100 my-5"></div>
+   
+       <div class="Options w-full flex gap-2 items-end justify-end mt-[2rem]">
+           <button class="save-button cancel-button">
+               <div class="svg-wrapper-1">
+                   <div class="svg-wrapper">
+                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" class="icon">
+                           <path d="M22,15.04C22,17.23 20.24,19 18.07,19H5.93C3.76,19 2,17.23 2,15.04C2,13.07 3.43,11.44 5.31,11.14C5.28,11 5.27,10.86 5.27,10.71C5.27,9.33 6.38,8.2 7.76,8.2C8.37,8.2 8.94,8.43 9.37,8.8C10.14,7.05 11.13,5.44 13.91,5.44C17.28,5.44 18.87,8.06 18.87,10.83C18.87,10.94 18.87,11.06 18.86,11.17C20.65,11.54 22,13.13 22,15.04Z"></path>
+                       </svg>
+                   </div>
+               </div>
+               <span>Cancel</span>
+           </button>
+   
+           <button class="save-button" type="submit">
+               <div class="svg-wrapper-1">
+                   <div class="svg-wrapper">
+                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" class="icon">
+                           <path d="M22,15.04C22,17.23 20.24,19 18.07,19H5.93C3.76,19 2,17.23 2,15.04C2,13.07 3.43,11.44 5.31,11.14C5.28,11 5.27,10.86 5.27,10.71C5.27,9.33 6.38,8.2 7.76,8.2C8.37,8.2 8.94,8.43 9.37,8.8C10.14,7.05 11.13,5.44 13.91,5.44C17.28,5.44 18.87,8.06 18.87,10.83C18.87,10.94 18.87,11.06 18.86,11.17C20.65,11.54 22,13.13 22,15.04Z"></path>
+                       </svg>
+                   </div>
+               </div>
+               <span>Save</span>
+           </button>
+       </div>
+   </form>
+   
+   
+   
+   
+       <script src="https://cdn.tailwindcss.com"></script>
+       <script>
+          document.getElementById('updateLabel').addEventListener('click', function() {
+           document.getElementById('ProfileImage').click();
+       });
+   
+       // Preview the selected image
+       function previewImage(event) {
+           const file = event.target.files[0];
+           const reader = new FileReader();
+           
+           reader.onload = function(e) {
+               const preview = document.getElementById('preview');
+               preview.src = e.target.result; // Set the image source to the selected file
+               preview.style.display = 'block'; // Ensure the image is visible
+           };
+           
+           if (file) {
+               reader.readAsDataURL(file); // Read the image file as a data URL
+           }
+       }
+       </script>
+</body>
+</html>
