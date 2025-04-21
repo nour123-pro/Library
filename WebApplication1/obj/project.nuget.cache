@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CeFKP8qmBe8=",
+  "dgSpecHash": "LUKpUzEGhZI=",
   "success": true,
-  "projectFilePath": "/Users/nourhammoud/Desktop/jp/WebApplication1/WebApplication1.csproj",
+  "projectFilePath": "/Users/nourhammoud/Desktop/ids fintech/jp/WebApplication1/WebApplication1.csproj",
   "expectedPackageFiles": [
     "/Users/nourhammoud/.nuget/packages/automapper/12.0.1/automapper.12.0.1.nupkg.sha512",
     "/Users/nourhammoud/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/12.0.1/automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

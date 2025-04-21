@@ -68,5 +68,11 @@ namespace WebApplication1.Controllers
             await _commentResp.DeleteAsync(Guid.Parse(deleteCommentRequest.commentid));
             return Ok(new{message="Comment Deleted Successfully"});
         }
+
+        [HttpGet("NumbersForBooks")]
+        public async Task<IActionResult> GetItRight(){
+            var response = await _commentResp.GetNumber();
+            return Ok(response);
+        }
     }
 }

@@ -16,6 +16,7 @@ namespace WebApplication1.Repositories
             IList<Book> books=await _context.Books
                                      .AsNoTracking()
                                     .IncludeNavigationProperties()
+                                  
                                     .Where(b=>b.isDeleted==false)
                                     .ToListAsync();
             return books;                        

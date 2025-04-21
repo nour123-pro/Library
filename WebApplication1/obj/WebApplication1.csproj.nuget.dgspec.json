@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/nourhammoud/Desktop/jp/WebApplication1/WebApplication1.csproj": {}
+    "/Users/nourhammoud/Desktop/ids fintech/jp/WebApplication1/WebApplication1.csproj": {}
   },
   "projects": {
-    "/Users/nourhammoud/Desktop/jp/WebApplication1/WebApplication1.csproj": {
+    "/Users/nourhammoud/Desktop/ids fintech/jp/WebApplication1/WebApplication1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/nourhammoud/Desktop/jp/WebApplication1/WebApplication1.csproj",
+        "projectUniqueName": "/Users/nourhammoud/Desktop/ids fintech/jp/WebApplication1/WebApplication1.csproj",
         "projectName": "WebApplication1",
-        "projectPath": "/Users/nourhammoud/Desktop/jp/WebApplication1/WebApplication1.csproj",
+        "projectPath": "/Users/nourhammoud/Desktop/ids fintech/jp/WebApplication1/WebApplication1.csproj",
         "packagesPath": "/Users/nourhammoud/.nuget/packages/",
-        "outputPath": "/Users/nourhammoud/Desktop/jp/WebApplication1/obj/",
+        "outputPath": "/Users/nourhammoud/Desktop/ids fintech/jp/WebApplication1/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/nourhammoud/.nuget/NuGet/NuGet.Config"
