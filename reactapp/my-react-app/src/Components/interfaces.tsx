@@ -104,4 +104,9 @@ export interface Notification {
   notificationImage?: Uint8Array;
   notificationText?: string;
 }
+export interface  BookCommentCountDto
+{
+     bookId:string
+     commentsCount:string
+}
 

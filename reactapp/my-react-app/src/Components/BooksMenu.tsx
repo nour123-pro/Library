@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { Book, Category } from "../Components/interfaces";
+import { Book, BookCommentCountDto, Category } from "../Components/interfaces";
 import { Link } from "react-router-dom";
 import BookTables, { GenericAgTable } from "./Table";
 
@@ -16,6 +16,9 @@ const BooksMenu = ( {onBookSelect}:BooksMenuProps) => {
   const [activeCategory, setActiveCategory] = useState<string>("all");
   const [currentPage, setCurrentPage] = useState<number>(1);
   const[selectedBooktosee,setSelectedBook]=useState<Book>();
+  const[comments,setcomments]=useState<Comment[]>();
+  const[commentnumberforBooks,setcommentnumberforbook]=useState<BookCommentCountDto[]>();
+  const [commentsmap, setcommentmap] = useState<Map<string, string>>(new Map());
   const columnDefs: ColDef[] = [
     { headerName: 'ID', field: 'bookId' },
     { headerName: 'Name', field: 'bookName' },
@@ -76,17 +79,44 @@ const BooksMenu = ( {onBookSelect}:BooksMenuProps) => {
       setError('An unexpected error occurred');
     }
   };
+  const fetchCommentsForBooksNumbers=async ()=>{
+    const apiUrl = `http://localhost:5000/api/Comment/NumbersForBooks`;
+    
+    try {
+      const response = await axios.get<BookCommentCountDto[]>(apiUrl, {
+        headers: { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+      });
+      setcommentnumberforbook(response.data);
 
+      
+        const newmap = new Map<string, string>();
+       response.data.forEach(element => {
+           newmap.set(element.bookId.toString(),element.commentsCount.toString());
+       });
+       setcommentmap(newmap);
+     
+
+     
+    } catch (error) {
+      handleApiError(error, 'Unable to load Books Data');
+      return [];
+    }
+  }
   // Load data on component mount
   useEffect(() => {
     const loadData = async () => {
       try {
         const [booksData, categoriesData] = await Promise.all([
           fetchBooks(),
-          fetchCategories()
+          fetchCategories(),
+          
         ]);
         setBooks(booksData);
         setCategories(categoriesData);
+        
       } catch (err) {
         setError(err instanceof Error ? err.message : 'Failed to load data');
       } finally {
@@ -96,7 +126,9 @@ const BooksMenu = ( {onBookSelect}:BooksMenuProps) => {
 
     loadData();
   }, []);
-
+  useEffect(()=>{
+  fetchCommentsForBooksNumbers();
+  },[books]);
   const handleCategoryClick = (categoryId: string): void => {
     setActiveCategory(categoryId);
     setCurrentPage(1);
@@ -145,14 +177,15 @@ const BooksMenu = ( {onBookSelect}:BooksMenuProps) => {
           <i className="scroll-icon fi fi-tr-angle-small-right"></i>
         </button>
       </div>
-
+      
       <div className="BooksMenu">
         {paginatedBooks.length > 0 ? (
           paginatedBooks.map((book: Book) => (
-           
+          
             <div key={book.bookId} className="Book book-item" onClick={() => onBookSelect(book)}
             
             >
+               
               {book.bookImages?(
   <img 
   src={`data:image/jpeg;base64,${book.bookImages}`} 
@@ -166,13 +199,18 @@ const BooksMenu = ( {onBookSelect}:BooksMenuProps) => {
         
             
               <div className="flex">
+               
                 <span className="dotspan2"></span>
                <div className="bookinfo">
                <p className="bookname">{book.bookName}</p>
                 <p className="bookcategory">{book.category.categoryName}</p>
                </div>
                 <div className="icons">
-                  <img src="src/assets/images/chat.png" alt="Chat" />
+                  <div style={{display:'flex',justifyContent:'center',alignItems:'center',textAlign:'center'}}>
+                    <img src="src/assets/images/chat.png" alt="Chat" />
+                    <span>{commentsmap.get(book.bookId)??0}</span>
+                  </div>
+                
                   <img src="src/assets/images/heart.png" alt="Like" />
                   <img 
                     src="src/assets/images/shopping-bag.png" 

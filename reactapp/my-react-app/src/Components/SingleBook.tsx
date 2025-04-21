@@ -1,5 +1,5 @@
-import "/Users/nourhammoud/Desktop/jp/reactapp/my-react-app/src/assets/css/style.css";
-import "/Users/nourhammoud/Desktop/jp/reactapp/my-react-app/src/assets/css/singleBook.css";
+import "../assets/css/style.css";
+import "../assets/css/singleBook.css";
 import { Book, BorrowedBook } from "./interfaces";
 import { Comment } from "./interfaces";
 import axios from "axios";
